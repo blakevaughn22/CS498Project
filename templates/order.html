@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Confirmation</title>
+</head>
+<body>
+	<h1>Your order:</h1>
+	<ul>
+		{% for item in items %}
+			<li>{{ item.name }} - ${{ item.price }}</li>
+		{% endfor %}
+	</ul>
+	<p>Total: ${{ total }}</p>
+	<p>Thank you for ordering from our coffee shop!</p>
+</body>
+</html>
