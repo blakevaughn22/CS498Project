@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Order Confirmation</title>
-</head>
-<body>
-	<h1>Your order:</h1>
-	<ul>
-		{% for item in items %}
-			<li>{{ item.name }} - ${{ item.price }}</li>
-		{% endfor %}
-	</ul>
-	<p>Total: ${{ total }}</p>
-	<p>Thank you for ordering from our coffee shop!</p>
-</body>
+	<head>
+		<title>Order Confirmation</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/order.css')}}">
+	</head>
+	<body>
+		<div class="sidenav">
+			<a href="#about">About</a>
+			<a href="#services">Services</a>
+			<a href="#clients">Clients</a>
+			<a href="#contact">Contact</a>
+		</div>
+		<div class="main">
+		<h1>Your Order:</h1>
+		<ul>
+			{% for item in items %}
+				<li>{{ item.name }} - ${{ item.price }}</li>
+			{% endfor %}
+		</ul>
+		<p>Total: ${{ total }}</p>
+		<p>Thank you for ordering from our coffee shop!</p>
+		</div>
+	</body>
 </html>
