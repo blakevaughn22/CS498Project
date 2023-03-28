@@ -6,6 +6,7 @@
 <body>
 	<h1>Welcome to our coffee shop</h1>
 	<form action="/order" method="post">
+		<input type="text" name="name">
 		{% for item, price in menu.items() %}
 			<div>
 				<label>

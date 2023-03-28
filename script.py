@@ -19,6 +19,7 @@ def home():
 def order():
     # get user's order from the form
     order = request.form.getlist("item")
+    name = request.form.get("name")
     total = 0
     items = []
 
@@ -28,7 +29,7 @@ def order():
         total += price
         items.append({"name": item, "price": price})
 
-    return render_template("order.html", items=items, total=total)
+    return render_template("order.html",name=name, items=items, total=total)
 
 if __name__ == "__main__":
     app.run(debug=True)
