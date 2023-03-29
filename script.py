@@ -15,6 +15,10 @@ menu = {
 def home():
     return render_template("index.html", menu=menu)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/order", methods=["POST"])
 def order():
     # get user's order from the form
