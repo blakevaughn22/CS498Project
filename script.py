@@ -9,6 +9,7 @@ menu = {
     "Espresso": 2.50,
     "Mocha": 4.00,
     "Americano": 2.75
+    
 }
 
 @app.route("/")
