@@ -1,28 +1,41 @@
 /* The sidebar menu */
-.leftsidenav {
+.leftsidebar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black */
+    background-color: #0e0e0e; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
   }
   
   /* The navigation menu links */
-  .leftsidenav a {
+  .leftsidebar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    text-align: center;
+    font-size: 400%;
+    color: #706f6f;
     display: block;
   }
   
   /* When you mouse over the navigation links, change their color */
-  .leftsidenav a:hover {
+  .leftsidebar a:hover {
     color: #f1f1f1;
+  }
+
+  .leftsidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #0e0e0e; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
   }
 
 .rightsidenav {
@@ -32,7 +45,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     right: 0;
-    background-color: #111; /* Black */
+    background-color: #0e0e0e; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
   }
@@ -40,8 +53,9 @@
   .rightsidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    text-align: center;
+    font-size: 400%;
+    color: #706f6f;
     display: block;
   }
   
@@ -50,9 +64,48 @@
     color: #f1f1f1;
   }
 
-  /* Style page content */
-.main {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-  margin-right: 160px; /* Same as width of the right sidebar */
-}
+  #container {
+    width: 60px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #8192a0;
+    margin: 0 auto;
+    padding: 60px;
+    z-index: 1;
+  }
+
+  #main_nav {
+    display: none;
+    position: relative;
+    top: -58px;
+    right: -105px;
+    background-color: #577248;
+    width: 150px;
+    height: 100%;
+    color: #706f6f;
+  }
+
+  .with_nav #main_nav {
+    display: block;
+  }
+
+  #access_nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 45px;
+    width: 40px;
+    height: 0;
+    padding-top: 40px;
+    overflow: hidden;
+    background-color: #8192a0;
+    background-image: -webkit-repeating-linear-gradient(#ccc, #ccc 2px, #fff 2px, #fff 4px);
+		background-image: repeating-linear-gradient(#ccc, #ccc 2px, #fff 2px, #fff 4px);
+    z-index: 1;
+  }
+
+  .with_nav #access_nav {
+    background-image: linear-gradient(45deg, transparent 13px, #ccc 13px, #ccc 15px, transparent 0), linear-gradient(-45deg, white 13px, #ccc 13px, #ccc 15px, white 0);
+  }

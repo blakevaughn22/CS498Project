@@ -3,19 +3,34 @@
 	<head>
 		<title>Order Confirmation</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/order.css')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<div class="leftsidenav">
+		<div id="container">
+			<p><a href="#main_nav" id="access_nav" class="access_aid"></a></p>
+	
+			<nav id="main_nav">
+				<ul>
+					<li><a href="">This</a></li>
+					<li><a href="">That</a></li>
+					<li><a href="">The other</a></li>
+				</ul>
+				<p><a href="#body" id="access_top" class="access_aid"></a></p>
+			</nav>
+		</div>
+		<!-- <nav class= "leftsidebar" id="leftsidebar">
+			<a href="#sidebarbutton" id="access_nav" class="access_aid"><i class="fa fa-fw fa-bars"></i></a>
+		</nav>
+		<div class="leftsidenav" id="leftsidenav">
 			<a href="#about">About</a>
 			<a href="#menu">Menu</a>
 			<a href="#orderahead">Order Ahead</a>
 			<a href="#contact">Contact</a>
-		</div>
+		</div> -->
 		<div class="rightsidenav">
-			<a href="#user">User</a>
-			<a href="#cart">Cart</a>
+			<a href="#user"><i class="fa fa-fw fa-user-circle-o"></i></a>
+			<a href="#cart"><i class="fa fa-fw fa-shopping-basket"></i></a>
 		</div>
-
 		<div class="main">
 		<img src="{{ url_for('static', filename='images/CompanyLogoLong.png') }}", alt="Logo for the Company",  width="100%", height="10%" />
 		<h1>Your Order:</h1>
@@ -36,4 +51,13 @@
 
 		</div>
 	</body>
+	<script>
+		var nav = document.getElementById('access_nav'),
+			body = document.body;
+	
+		nav.addEventListener('click', function(e) {
+			body.className = body.className? '' : 'with_nav';
+			e.preventDefault();
+		});
+	</script>
 </html>
