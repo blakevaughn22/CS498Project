@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Login</title>
+    <style>
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .right-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70px;
+        height: 100%;
+        background-color: #f1f1f1;
+        z-index: 1;
+    }
+
+    .right-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px 0;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        height: 70px;
+    }
+
+    .right-bar a:last-child {
+        border-bottom: none;
+    }
+
+    .right-bar a:hover {
+        background-color: #ddd;
+    }
+
+    .right-bar img {width: 100%;
+    height: auto;
+}
+
+.right-bar span {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+</style>
+    <script>
+        function openNav(sidenavId) {
+            document.getElementById(sidenavId).style.width = "250px";
+        }
+
+        function closeNav(sidenavId) {
+            document.getElementById(sidenavId).style.width = "0";
+        }
+    </script>
+</head>
+<body>
+    <span style="cursor:pointer" onclick="openNav('leftSidenav')">&#9776; </span>
+
+    <div id="leftSidenav" class="sidenav" style="background-color: #111;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('leftSidenav')">&times;</a>
+        <a href="about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="/">Order Ahead</a>
+        <a href="contact">Contact</a>
+    </div>
+
+    <div class="right-bar">
+        <a href="login">
+            <img src="{{ url_for('static', filename='images/user-icon.png') }}" alt="Logo for the Company" width="100%" height="auto" />
+            <span></span>
+        </a>
+        <a href="#cart">
+            <img src="{{ url_for('static', filename='images/cart-icon.png') }}" alt="Logo for the Company"width="100%" height="auto" />
+            <span></span>
+        </a>
+    </div>
+
+
+    <div class="main">
+    <h1>Employee Login</h1>
+    <form action="/authenticate" method="post">
+        <p><input type="text" name="username" placeholder="Username"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+        <p><button type="submit">Log In</button></p>
+    </form>
+</div>
+</body>
+</html>
