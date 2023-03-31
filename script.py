@@ -8,6 +8,8 @@ app.secret_key = 'my-secret-key'
 # SQLite Configuration
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///customers.db'
+
 # Connect to the customer database
 app.config['SQLALCHEMY_BINDS'] = {
     'customers': 'sqlite:///customers.db',
@@ -30,13 +32,19 @@ class Order(db.Model):
     timestamp = db.Column(db.DateTime, nullable=False)
     done = db.Column(db.Boolean, default=False)
 
-# Create all tables
-db.create_all(bind='customers')
-db.create_all(bind='menu')
+
+with app.app_context():
+    db.create_all()
 
 @app.route("/")
 def home():
     # Fetch menu items from the database
+    menu_items = MenuItem.query.all()
+    menu = {item.name: item.price for item in menu_items}
+    return render_template("index.html", menu=menu)
+
+@app.route("/homepage")
+def homepage():
     menu_items = MenuItem.query.all()
     menu = {item.name: item.price for item in menu_items}
     return render_template("index.html", menu=menu)
