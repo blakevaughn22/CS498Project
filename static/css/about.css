@@ -1,0 +1,52 @@
+/* import the font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+/* apply the font to all text elements */
+body {
+font-family: 'Quicksand', sans-serif;
+}
+
+/* Style circular images */
+.owner-img {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+overflow: hidden;
+margin: 10px;
+}
+
+/* Style owner names */
+.owner-name {
+font-weight: bold;
+margin: 5px;
+}
+
+/* Style owner descriptions */
+.owner-description {
+margin: 5px;
+}
+
+/* Style owner container */
+.owners-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style owner item */
+.owner-item {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style owner item in the second row */
+.owner-item:nth-child(n+4) {
+    flex-basis: calc(50% - 20px);
+}

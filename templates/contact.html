@@ -1,65 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html>
   <head>
-
     <title>Contact Us - Great Pouring Tastes Coffee Shop</title>
     <img src="../static/images/CompanyLogoLong.png" width="1500" height= "500" alt="My Coffee Shop Logo" class="banner">
-
-    <style>
-      /* Center text in container */
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 50px;
-      }
-      
-      /* Add border and padding to form inputs */
-      input[type=text], textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        resize: vertical;
-      }
-      
-      /* Style submit button */
-      input[type=submit] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      
-      /* Style circular images */
-      .owner-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 10px;
-      }
-      
-      /* Style owner names */
-      .owner-name {
-        font-weight: bold;
-        margin: 5px;
-      }
-      
-      /* Style owner descriptions */
-      .owner-description {
-        margin: 5px;
-      }
-    </style>
-</head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contact.css') }}">
+  </head>
   
-<body>
+  <body>
     <h1>Contact Us</h1>
     <div class="container">
       <form action="submit-form.php" method="POST">
@@ -76,4 +26,5 @@
       </form>
       
     </div>  
-</body>
+  </body>
+{% endblock %}

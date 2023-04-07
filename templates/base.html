@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Order Ahead{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<body>
+    <nav>
+        <span style="cursor:pointer" onclick="openNav('leftSidenav')">&#9776; </span>
+
+        <div id="leftSidenav" class="sidenav" style="background-color: #111;">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('leftSidenav')">&times;</a>
+            <a href="about">About</a>
+            <a href="/">Order Ahead</a>
+            <a href="contact">Contact</a>
+        </div>
+
+        <div class="right-bar">
+            <a href="login">
+                <img src="{{ url_for('static', filename='images/user-icon.png') }}" alt="Logo for the Company" width="100%" height="auto" />
+                <span></span>
+            </a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+</body>
+</html>

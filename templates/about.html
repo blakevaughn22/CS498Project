@@ -1,141 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html>
     <head>
-    <title>About Us - Great Pouring Tastes Coffee Shop</title>
-    <img src="../static/images/CompanyLogoLong.png" width="1500" height= "500" alt="My Coffee Shop Logo" class="banner">
-    <style>
+        <title>About Us - Great Pouring Tastes Coffee Shop</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS/about.css') }}">
+    </head>
+    <body>
+        <img src="{{ url_for('static', filename='images/CompanyLogoLong.png') }}" width="1500" height="500" alt="My Coffee Shop Logo" class="banner">
+        <h1>Welcome to our coffee shop</h1>
+        <p>Great Pouring Tastes is a unique coffee shop that was founded by five computer science students who decided to follow their passion for coffee and create a cozy and inviting space for coffee lovers. Located in the heart of the city, Great Pouring Tastes offers an exceptional coffee experience with a carefully curated menu of handcrafted drinks and freshly roasted beans.
 
-    /* import the font */
-    @import url('https://fonts.googleapis.com/css?family=Quicksand');
+            The five founders of Great Pouring Tastes gave up their lucrative careers in software engineering to pursue their love for coffee and create a welcoming atmosphere for coffee enthusiasts. They are dedicated to providing an excellent customer experience by providing a range of premium coffees, pastries, and snacks that complement their signature blends.
+            
+            Great Pouring Tastes offers a wide range of delicious drinks, including espresso-based drinks, pour-over coffee, and cold brews, all made with the highest quality beans from reputable roasters. The shop's ambiance is warm and inviting, with cozy seating areas perfect for relaxing with a book or catching up with friends.
+            
+            The coffee shop's commitment to sustainability is evident in its use of eco-friendly materials and support for local suppliers. The founders take great pride in being a part of the local community and aim to make a positive impact on the environment.
+            
+            Whether you're looking for a morning pick-me-up or a place to unwind after a long day, Great Pouring Tastes is the perfect destination for coffee lovers. Come and experience the exceptional taste, warm hospitality, and friendly atmosphere that sets this coffee shop apart from the rest.
+            
+            </p>
 
-    /* apply the font to all text elements */
-    body {
-    font-family: 'Quicksand', sans-serif;
-    }
-
-    /* Style circular images */
-    .owner-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 10px;
-    
-    }
-
-    
-    /* Style owner names */
-    .owner-name {
-    font-weight: bold;
-    margin: 5px;
-    }
-    
-    /* Style owner descriptions */
-    .owner-description {
-    margin: 5px;
-    }
-
-    /* Style owner container */
-    .owners-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Style owner item */
-    .owner-item {
-        flex-basis: calc(33.33% - 20px);
-        margin: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Style owner item in the second row */
-    .owner-item:nth-child(n+4) {
-        flex-basis: calc(50% - 20px);
-    }
-
-    </style>
-</head>
-<body>
-	<h1>Welcome to our coffee shop</h1>
-    <p>Great Pouring Tastes is a unique coffee shop that was founded by five computer science students who decided to follow their passion for coffee and create a cozy and inviting space for coffee lovers. Located in the heart of the city, Great Pouring Tastes offers an exceptional coffee experience with a carefully curated menu of handcrafted drinks and freshly roasted beans.
-
-        The five founders of Great Pouring Tastes gave up their lucrative careers in software engineering to pursue their love for coffee and create a welcoming atmosphere for coffee enthusiasts. They are dedicated to providing an excellent customer experience by providing a range of premium coffees, pastries, and snacks that complement their signature blends.
-        
-        Great Pouring Tastes offers a wide range of delicious drinks, including espresso-based drinks, pour-over coffee, and cold brews, all made with the highest quality beans from reputable roasters. The shop's ambiance is warm and inviting, with cozy seating areas perfect for relaxing with a book or catching up with friends.
-        
-        The coffee shop's commitment to sustainability is evident in its use of eco-friendly materials and support for local suppliers. The founders take great pride in being a part of the local community and aim to make a positive impact on the environment.
-        
-        Whether you're looking for a morning pick-me-up or a place to unwind after a long day, Great Pouring Tastes is the perfect destination for coffee lovers. Come and experience the exceptional taste, warm hospitality, and friendly atmosphere that sets this coffee shop apart from the rest.
-        
-        </p>
-
-    <h2>Meet the Owners</h2>
+        <h2>Meet the Owners</h2>
 
 
-    <div class="owners-container">
-        <div class="owner-item">
-            <div class="owner-img">
-                <img src="../static/images/owner1.jpg" width="200" height= "200" alt="Owner 1">
+        <div class="owners-container">
+            <div class="owner-item">
+                <div class="owner-img">
+                    <img src="{{ url_for('static', filename='images/owner1.jpg') }}" width="200" height= "200" alt="Owner 1">
+                </div>
+                <div>
+                    <p class="owner-name">John Marshall</p>
+                    <p class="owner-description">
+                        Hailing from Paintsville, Kentucky, John is passionate about creating unique coffee blends that excite the taste buds of our customers. He loves interacting with our customers and making them feel welcome. John hopes to create a coffee shop where people can come to connect with others and enjoy great coffee in a welcoming and friendly atmosphere.
+                    </p>
+                </div>
             </div>
-            <div>
-                <p class="owner-name">John Marshall</p>
+            <div class="owner-item">
+                <div class="owner-img">
+                    <img src="{{ url_for('static', filename='images/owner2.jpg') }}" width="200" height= "200" alt="Owner 2">
+                </div>
+                <div>
+                <p class="owner-name">William "Blake" Vaughn</p>
                 <p class="owner-description">
-                    Hailing from Paintsville, Kentucky, John is passionate about creating unique coffee blends that excite the taste buds of our customers. He loves interacting with our customers and making them feel welcome. John hopes to create a coffee shop where people can come to connect with others and enjoy great coffee in a welcoming and friendly atmosphere.
+                    Originally from Middlesboro, Kentucky, Blake is a skilled barista who creates beautiful latte art that our customers love. He is committed to using sustainable and eco-friendly practices in our coffee shop. Blake hopes to create a space where people can come to not only enjoy great coffee,                     but also learn about the importance of sustainable living.
                 </p>
+                </div>
+            </div>
+            <div class="owner-item">
+                <div class="owner-img">
+                    <img src="{{ url_for('static', filename='images/owner3.jpg') }}" width="200" height= "200" alt="Owner 3">
+                </div>
+                <div>
+                <p class="owner-name">Margaret Cunningham</p>
+                <p class="owner-description"> 
+                    Margaret grew up in Hazard, Kentucky and brings a wealth of experience in business management to the team. She is passionate about creating a coffee shop that is not only profitable but also has a positive impact on the environment and the community. Margaret hopes to establish Great Pouring Tastes as a place where people can come to enjoy high-quality coffee while also making a difference in the world.
+                </p>
+                </div>
+            </div>
+            <div class="owner-item">
+                <div class="owner-img">
+                    <img src="{{ url_for('static', filename='images/owner4.jpg') }}" width="200" height= "200" alt="Owner 4">
+                </div>
+                <div>
+                <p class="owner-name">Jackson</p>
+                <p class="owner-description"> 
+                    Jackson is originally from Pikeville, Kentucky and has a deep love for coffee and the art of roasting. He is dedicated to sourcing the best beans and creating unique blends that set our coffee shop apart from others. Jackson hopes to create a coffee shop that not only serves great coffee, but also provides opportunities for education and training in coffee roasting and brewing.
+                </p>
+                </div>
+            </div>
+            <div class="owner-item">
+                <div class="owner-img">
+                    <img src="{{ url_for('static', filename='images/owner5.jpg') }}" width="200" height= "200" alt="Owner 5">
+                </div>
+                <div>
+                <p class="owner-name">Justin</p>
+                <p class="owner-description">
+                    Originally from Ashland, Kentucky, Justin is a skilled baker and pastry chef who brings his creativity and passion for food to Great Pouring Tastes. He is committed to using locally sourced and organic ingredients in his baked goods and creating unique flavor combinations that complement our coffee. Justin hopes to create a coffee shop that not only serves great coffee and baked goods, but also provides a platform for local farmers and producers to showcase their products.
+                </p>
+                </div>
             </div>
         </div>
-        <div class="owner-item">
-            <div class="owner-img">
-                <img src="../static/images/owner2.jpg" width="200" height= "200" alt="Owner 2">
-            </div>
-            <div>
-            <p class="owner-name">William "Blake" Vaughn</p>
-            <p class="owner-description">
-                Originally from Middlesboro, Kentucky, Blake is a skilled barista who creates beautiful latte art that our customers love. He is committed to using sustainable and eco-friendly practices in our coffee shop. Blake hopes to create a space where people can come to not only enjoy great coffee, but also learn about the importance of sustainable living.
-            </p>
-            </div>
-        </div>
-        <div class="owner-item">
-            <div class="owner-img">
-                <img src="../static/images/owner3.jpg" width="200" height= "200" alt="Owner 3">
-            </div>
-            <div>
-            <p class="owner-name">Margaret Cunningham</p>
-            <p class="owner-description"> 
-                Margaret grew up in Hazard, Kentucky and brings a wealth of experience in business management to the team. She is passionate about creating a coffee shop that is not only profitable but also has a positive impact on the environment and the community. Margaret hopes to establish Great Pouring Tastes as a place where people can come to enjoy high-quality coffee while also making a difference in the world.
-            </p>
-            </div>
-        </div>
-        <div class="owner-item">
-            <div class="owner-img">
-                <img src="../static/images/owner4.jpg" width="200" height= "200" alt="Owner 4">
-            </div>
-            <div>
-            <p class="owner-name">Jackson</p>
-            <p class="owner-description"> 
-                Jackson is originally from Pikeville, Kentucky and has a deep love for coffee and the art of roasting. He is dedicated to sourcing the best beans and creating unique blends that set our coffee shop apart from others. Jackson hopes to create a coffee shop that not only serves great coffee, but also provides opportunities for education and training in coffee roasting and brewing.
-            </p>
-            </div>
-        </div>
-        <div class="owner-item">
-            <div class="owner-img">
-                <img src="../static/images/owner5.jpg" width="200" height= "200" alt="Owner 5">
-            </div>
-            <div>
-            <p class="owner-name">Justin</p>
-            <p class="owner-description">
-                Originally from Ashland, Kentucky, Justin is a skilled baker and pastry chef who brings his creativity and passion for food to Great Pouring Tastes. He is committed to using locally sourced and organic ingredients in his baked goods and creating unique flavor combinations that complement our coffee. Justin hopes to create a coffee shop that not only serves great coffee and baked goods, but also provides a platform for local farmers and producers to showcase their products.
-            </p>
-            </div>
-        </div>
-    </div>
 
-</body>
+    </body>
 </html>
+{% endblock %}
+
