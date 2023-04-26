@@ -1,4 +1,8 @@
-/* Add your common CSS styles here */
+body {
+    background-color: rgb(252, 247, 243);
+    color: #333;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
